@@ -16,6 +16,6 @@ class DTRefer{
         string getDOI();
         string getTitulo();
         DTFecha getFecha();
-        set<string>  getautores();   
+        set<string>  getAutores();   
 };
 #endif
