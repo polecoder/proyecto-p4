@@ -2,7 +2,8 @@
 #include <string>
 
 #include "../include/paginaWeb.h"
-#include "../include/publicacion.h"
+#include "../include/Publicacion.h"
+#include "../include/Investigador.h"
 
 using namespace std;
 
