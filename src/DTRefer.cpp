@@ -25,6 +25,6 @@ DTFecha DTRefer::getFecha(){
     return this->fecha;
 }
         
-set<string> DTRefer:: getautores(){
+set<string> DTRefer:: getAutores(){
     return this->autores;
 }
