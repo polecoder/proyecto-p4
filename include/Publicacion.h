@@ -1,8 +1,8 @@
 #ifndef PUBLICACION
 #define PUBLICACION
-#include "../include/DTFecha.h"
-#include "../include/DTRefer.h"
-#include "../include/Investigador.h"
+#include "DTFecha.h"
+#include "DTRefer.h"
+#include "Investigador.h"
 #include <set>
 #include <string> 
 using namespace std;

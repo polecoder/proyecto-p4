@@ -6,11 +6,11 @@
 #include <set>
 #include <string>
 
-/* #include "../include/Publicacion.h" */
+#include "Publicacion.h"
 
 using namespace std;
 
-class Libro/*: public Publicacion*/ {
+class Libro: public Publicacion {
   private:
     string editorial;
     set<string> palabrasDestacadas;
