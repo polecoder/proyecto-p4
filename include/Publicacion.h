@@ -27,7 +27,6 @@ class Publicacion{
         string getTitulo();
         DTFecha getFecha();
         set<Investigador*> getAutores();
-       
 
         DTRefer getDT();
         virtual bool contienePalabra (string palabra)=0;

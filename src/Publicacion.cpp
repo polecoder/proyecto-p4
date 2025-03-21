@@ -54,7 +54,7 @@ DTRefer Publicacion ::getDT(){
     set<string> inv;
     for (Investigador* investigador : this->autores) {
         inv.insert(investigador->getNombre());
-}
+    }
     return DTRefer(this->DOI, this->titulo,this->fecha,inv);
 }
 
