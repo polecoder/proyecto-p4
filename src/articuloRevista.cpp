@@ -2,6 +2,7 @@
 #include "../include/DTRefer.h"
 #include "../include/Publicacion.h"
 #include "../include/Investigador.h"
+#include "../include/articuloRevista.h"
 #include <set>
 #include <string> 
 using namespace std;
