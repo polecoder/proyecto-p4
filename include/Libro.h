@@ -7,6 +7,8 @@
 #include <string>
 
 #include "Publicacion.h"
+#include "DTFecha.h"
+/* #include "Investigador.h" */
 
 using namespace std;
 
@@ -15,7 +17,7 @@ class Libro: public Publicacion {
     string editorial;
     set<string> palabrasDestacadas;
   public:
-    Libro(string editorial, set<string> palabrasDestacadas);
+    Libro(string DOI, string titulo, DTFecha fecha, string editorial, set<Investigador*> autores, set<string> palabrasDestacadas);
 
     // setters
     void setEditorial(string editorial);
@@ -28,7 +30,7 @@ class Libro: public Publicacion {
     set<string> getPalabrasDestacadas();
 
     // metodos especificos
-    virtual bool contienePalabra(string palabra);
+    virtual bool contienePalabra(string palabra)=0;
 };
 
 #endif
