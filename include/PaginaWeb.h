@@ -9,20 +9,20 @@
 
 using namespace std;
 
-class PaginaWeb : public PUBLICACION{
-private:
-    string url;
-    set<string> contenidoExtraido;
-public:
-    PaginaWeb(string DOI, string titulo, DTFecha fecha, set<investigador*> autores, string url, set<string> contenidoExtraido);
-    
-    void setUrl(string url);
-    void setContenidoExtraido(string contenidoExtraido);
-    
-    string getUrl();
-    set<string> getContenidoExtraido();
-    
-    virtual bool contienePalabra(string palabra);
+class PaginaWeb : public Publicacion {
+    private:
+        string url;
+        string contenidoExtraido;
+    public:
+        PaginaWeb(string DOI, string titulo, DTFecha fecha, set<Investigador*> autores, string url, string contenidoExtraido);
+        
+        void setUrl(string url);
+        void setContenidoExtraido(string contenidoExtraido);
+        
+        string getUrl();
+        string getContenidoExtraido();
+        
+        virtual bool contienePalabra(string palabra);
 };
 
 #endif
