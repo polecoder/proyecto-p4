@@ -1,6 +1,11 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include "Investigador.h"
+#include "Publicacion.h"
+#include "articuloRevista.h"
+#include "Libro.h"
+
 
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
@@ -33,10 +38,25 @@ Publicacion* coleccion_getPublicacion(std::string DOI){
 }
 
 void parte_a(){
+	DTFecha fecha = DTFecha(15,5,2023);
+	std::set<Investigador*> autores;
+	ArticuloRevista("10.1234/abc123", "Fundamentos de POO", fecha, autores,"Programación Avanzada","Introduccion a los principios fundamentales de la programación orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.");
+
+	DTFecha fecha2 = DTFecha(10,2,2024);
+	std::set<Investigador*> autores2;
+	ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, autores2,"Modelado de Software","Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
 }
 
 void parte_b(){
+	DTFecha fecha = DTFecha(20,8,2022);
+	std::set<Investigador*> autores;
+	Libro("10.2345/def456","Patrones de Diseno en c++",fecha,"Software Design",autores,{"Diseno","OOP","Class"});
+
+	DTFecha fecha2 = DTFecha(20,8,2022);
+	std::set<Investigador*> autores2;
+	Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,{"Diagramas","UML","Software","Modelado"});
 }
+
 
 void parte_c(){
 }

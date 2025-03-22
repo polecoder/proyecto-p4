@@ -8,27 +8,27 @@
 
 using namespace std;
 
-articuloRevista::articuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto): Publicacion(DOI,titulo,fecha,autores) {
+ArticuloRevista::ArticuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto): Publicacion(DOI,titulo,fecha,autores) {
     this->revista=nombreRevista;
     this->extracto=extracto;
 }
 
-void articuloRevista::setRevista(string revista) {
+void ArticuloRevista::setRevista(string revista) {
     this->revista=revista;
 }
 
-void articuloRevista::setExtracto(string extracto) {
+void ArticuloRevista::setExtracto(string extracto) {
     this->extracto=extracto;
 }
 
-string articuloRevista::getRevista() {
+string ArticuloRevista::getRevista() {
     return this->revista;
 }
 
-string articuloRevista::getExtracto() {
+string ArticuloRevista::getExtracto() {
     return this->extracto;
 }
 
-bool articuloRevista::contienePalabra(string palabra) {
+bool ArticuloRevista::contienePalabra(string palabra) {
     return (this->extracto.find(palabra) != string::npos);
 }
