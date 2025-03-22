@@ -26,8 +26,9 @@ void Investigador::setInstitucion (string institucion){
     this->institucion = institucion;
 }
 
-bool Investigador::estaPublicacion(Publicacion* publicacion) {
-    return this->publicaciones.find(publicacion) != this->publicaciones.end();
+bool Investigador::estaPublicacion(Publicacion publicacion) {
+    Publicacion* pub = publicacion;
+    return this->publicaciones.find(pub) != this->publicaciones.end();
 }
 
 //Una pinta de que se rompe todo con esto
