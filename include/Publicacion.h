@@ -20,8 +20,8 @@ class Publicacion{
         void setTitulo(string titulo);
         void setFecha(DTFecha fecha);
 
-        void agregarAutor(Investigador* investigador);
-        void eliminarAutor(Investigador* investigador);  
+        void agregarAutor(Investigador investigador);
+        void eliminarAutor(Investigador investigador);  
 
         string getDOI();
         string getTitulo();
