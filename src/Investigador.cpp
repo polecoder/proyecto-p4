@@ -15,39 +15,43 @@ Investigador::~Investigador(){
 }
 
 void Investigador::setORCID (string ORCID){
-    ORCID = ORCID;
+    this->ORCID = ORCID;
 }
 
 void Investigador::setNombre (string nombre){
-    nombre = nombre;
+    this->nombre = nombre;
 }
 
 void Investigador::setInstitucion (string institucion){
-    institucion = institucion;
+    this->institucion = institucion;
 }
 
 bool Investigador::estaPublicacion(Publicacion* publicacion) {
-    return publicaciones.find(publicacion) != publicaciones.end();
+    return this->publicaciones.find(publicacion) != this->publicaciones.end();
 }
 
-void  Investigador::eliminarPublicacion(Publicacion* publicacion){
-    publicaciones.erase(publicacion);
+//Una pinta de que se rompe todo con esto
+void  Investigador::eliminarPublicacion(Publicacion publicacion){
+    Publicacion* pub = publicacion;
+    this->publicaciones.erase(pub);
 }
 
-void Investigador:: agregarPublicacion(Publicacion* publicacion){
-    publicaciones.insert(publicacion);
+//Una pinta de que se rompe todo con esto
+void Investigador:: agregarPublicacion(Publicacion publicacion){
+    Publicacion* pub = publicacion;
+    this->publicaciones.insert(pub);
 }
 
 string Investigador::getORCID(){
-    return ORCID;
+    return this->ORCID;
 }
 
 string Investigador::getNombre(){
-    return nombre;
+    return this->nombre;
 }
 
 string Investigador::getInstitucion(){
-    return institucion;
+    return this->institucion;
 }
 
 // Falta una funcion para saber si una fecha es mayor que otra, no se si me corresponde a mi o a publicacion
