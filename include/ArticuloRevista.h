@@ -1,3 +1,5 @@
+#ifndef ARTICULOREVISTA
+#define ARTICULOREVISTA
 #include "DTFecha.h"
 #include "Publicacion.h"
 #include "Investigador.h"

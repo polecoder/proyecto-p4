@@ -25,14 +25,15 @@ void Publicacion::setFecha(DTFecha fecha){
     this->fecha=fecha;
 }
 
-void Publicacion:: agregarAutor(Investigador* investigador){
-    this->autores.insert(investigador);
+void Publicacion::agregarAutor(Investigador* investigador) {
+    this->autores.insert(investigador);         
 }
 
-void Publicacion:: eliminarAutor(Investigador* investigador){
-    this->autores.erase(investigador);
-    //no se si tengo que liberar la memoria del investigador
-} 
+void Publicacion::eliminarAutor(Investigador* investigador) {
+    if (this->autores.find(investigador) != autores.end()) {
+        this->autores.erase(investigador);    
+    }       
+}
 
 set<Investigador*> Publicacion::getAutores(){
     return this->autores;
