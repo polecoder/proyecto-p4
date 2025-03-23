@@ -1,6 +1,6 @@
 #ifndef INVESTIGADOR
 #define INVESTIGADOR
-#include "../include/Publicacion.h"
+#include "Publicacion.h"
 #include <set>
 #include <string> 
 using namespace std;

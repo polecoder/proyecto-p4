@@ -1,6 +1,6 @@
-#include "../include/DTFecha.h"
-#include "../include/Publicacion.h"
-#include "../include/Investigador.h"
+#include "DTFecha.h"
+#include "Publicacion.h"
+#include "Investigador.h"
 #include <set>
 #include <string> 
 using namespace std;
@@ -10,7 +10,7 @@ class ArticuloRevista: public Publicacion {
         string revista;
         string extracto;
     public:
-        articuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto);
+        ArticuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto);
 
         void setRevista(string revista);
         void setExtracto(string extracto);

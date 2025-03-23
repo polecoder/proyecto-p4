@@ -1,6 +1,6 @@
 #ifndef REFER
 #define REFER
-#include "../include/DTFecha.h"
+#include "DTFecha.h"
 #include <set>
 #include <string> 
 using namespace std;
@@ -12,7 +12,7 @@ class DTRefer{
         DTFecha fecha;
         set<string> autores;
     public:
-        DTRefer ( string DOI, string titulo, DTFecha fecha, set<string> autores);
+        DTRefer (string DOI, string titulo, DTFecha fecha, set<string> autores);
         string getDOI();
         string getTitulo();
         DTFecha getFecha();

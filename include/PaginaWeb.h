@@ -3,9 +3,9 @@
 
 #include <string>
 #include <set>
-#include "../include/Publicacion.h"
-#include "../include/Investigador.h"
-#include "../include/DTFecha.h"
+#include "Publicacion.h"
+#include "Investigador.h"
+#include "DTFecha.h"
 
 using namespace std;
 
