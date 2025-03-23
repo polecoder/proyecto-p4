@@ -1,12 +1,10 @@
-
 #include "../include/DTFecha.h"
 #include "../include/DTRefer.h"
 #include <set>
 #include <string> 
 using namespace std;
 
-   
-DTRefer:: DTRefer ( string DOI, string titulo, DTFecha fecha,set<string> autores ){
+DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores) {
     this->DOI=DOI;
     this->titulo=titulo;
     this->fecha=fecha;

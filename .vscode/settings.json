@@ -1,11 +1,17 @@
 {
-    "files.associations": {
-        "*.tcc": "cpp",
-        "string": "cpp",
-        "unordered_map": "cpp",
-        "string_view": "cpp",
-        "set": "cpp",
-        "deque": "cpp",
-        "vector": "cpp"
-    }
+  "files.associations": {
+    "*.tcc": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "string_view": "cpp",
+    "set": "cpp",
+    "deque": "cpp",
+    "vector": "cpp",
+    "array": "cpp",
+    "list": "cpp",
+    "format": "cpp",
+    "initializer_list": "cpp",
+    "span": "cpp",
+    "text_encoding": "cpp"
+  }
 }

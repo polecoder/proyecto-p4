@@ -6,7 +6,7 @@
 #include <string> 
 using namespace std;
 
-Publicacion ::Publicacion(string DOI, string titulo, DTFecha fecha, set<Investigador*> autores){
+Publicacion::Publicacion(string DOI, string titulo, DTFecha fecha, set<Investigador*> autores){
     this->DOI=DOI;
     this->titulo=titulo;
     this->fecha=fecha;

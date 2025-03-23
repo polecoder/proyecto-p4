@@ -51,7 +51,9 @@ string Investigador::getInstitucion(){
 
 set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     set<string> conjuntoDOI;
-    for (Publicacion* publicacion : publicaciones) {
+    set<Publicacion*>::const_iterator iteradorPub;
+    for (iteradorPub = this->publicaciones.begin(); iteradorPub != this->publicaciones.end(); ++iteradorPub) {
+        Publicacion* publicacion = *iteradorPub;
         DTFecha fechaPublicacion = publicacion->getFecha();
         if (fechaPublicacion.mayorQue(desde) && publicacion->contienePalabra(palabra)) {
             conjuntoDOI.insert(publicacion->getDOI());
