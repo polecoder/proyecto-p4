@@ -53,9 +53,13 @@ DTFecha Publicacion::getFecha(){
 
 DTRefer Publicacion ::getDT(){
     set<string> inv;
-    for (Investigador* investigador : this->autores) {
-        inv.insert(investigador->getNombre());
+    set<Investigador*>::const_iterator iteradorAutores;
+
+    for (iteradorAutores = this->autores.begin(); iteradorAutores != this->autores.end(); ++iteradorAutores) {
+        Investigador* autor = *iteradorAutores;
+        inv.insert(autor->getNombre());
     }
+
     return DTRefer(this->DOI, this->titulo,this->fecha,inv);
 }
 
