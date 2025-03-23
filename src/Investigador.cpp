@@ -11,9 +11,6 @@ Investigador::Investigador(string ORCID, string nombre, string institucion, set<
     this->publicaciones = publicaciones;
 }
 
-Investigador::~Investigador(){
-}
-
 void Investigador::setORCID (string ORCID){
     this->ORCID = ORCID;
 }
@@ -31,7 +28,7 @@ bool Investigador::estaPublicacion(Publicacion publicacion) {
     return this->publicaciones.find(pub) != this->publicaciones.end();
 }
 
-//Una pinta de que se rompe todo con esto
+// Una pinta de que se rompe todo con esto
 void  Investigador::eliminarPublicacion(Publicacion publicacion){
     Publicacion* pub = publicacion;
     this->publicaciones.erase(pub);

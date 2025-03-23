@@ -1,9 +1,11 @@
 #ifndef INVESTIGADOR
 #define INVESTIGADOR
-#include "Publicacion.h"
 #include <set>
 #include <string> 
 using namespace std;
+
+// Forward declaration
+class Publicacion;
 
 class Investigador{
     private:
