@@ -4,6 +4,8 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "string_view": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
     }
 }
