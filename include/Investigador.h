@@ -20,11 +20,11 @@ class Investigador{
         void setNombre(string nombre);
         void setInstitucion(string institucion);
 
-        void agregarPublicacion(Publicacion publicacion);
-        bool estaPublicacion(Publicacion publicacion);
+        void agregarPublicacion(Publicacion* publicacion);
+        bool estaPublicacion(Publicacion* publicacion);
 
         //PRE: La publicacion se encuentra en el set
-        void eliminarPublicacion(Publicacion publicacion);
+        void eliminarPublicacion(Publicacion* publicacion);
 
         string getORCID();
         string getNombre();

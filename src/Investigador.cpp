@@ -23,21 +23,18 @@ void Investigador::setInstitucion (string institucion){
     this->institucion = institucion;
 }
 
-bool Investigador::estaPublicacion(Publicacion publicacion) {
-    Publicacion* pub = publicacion;
-    return this->publicaciones.find(pub) != this->publicaciones.end();
+bool Investigador::estaPublicacion(Publicacion* publicacion) {
+    return this->publicaciones.find(publicacion) != this->publicaciones.end();
 }
 
-// Una pinta de que se rompe todo con esto
-void  Investigador::eliminarPublicacion(Publicacion publicacion){
-    Publicacion* pub = publicacion;
-    this->publicaciones.erase(pub);
+void  Investigador::eliminarPublicacion(Publicacion* publicacion){
+    if (Investigador::estaPublicacion(publicacion)) {
+        this->publicaciones.erase(publicacion);
+    }
 }
 
-//Una pinta de que se rompe todo con esto
-void Investigador:: agregarPublicacion(Publicacion publicacion){
-    Publicacion* pub = publicacion;
-    this->publicaciones.insert(pub);
+void Investigador:: agregarPublicacion(Publicacion* publicacion){
+    this->publicaciones.insert(publicacion);
 }
 
 string Investigador::getORCID(){
@@ -52,13 +49,13 @@ string Investigador::getInstitucion(){
     return this->institucion;
 }
 
-// Falta una funcion para saber si una fecha es mayor que otra, no se si me corresponde a mi o a publicacion
 set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
-    set<string> DOI;
+    set<string> conjuntoDOI;
     for (Publicacion* publicacion : publicaciones) {
-        if (publicacion->getFecha() > desde && publicacion->contienePalabra(palabra)) {
-            DOI.insert(publicacion->getDOI());
+        DTFecha fechaPublicacion = publicacion->getFecha();
+        if (fechaPublicacion.mayorQue(desde) && publicacion->contienePalabra(palabra)) {
+            conjuntoDOI.insert(publicacion->getDOI());
         }
     }
-    return DOI;
+    return conjuntoDOI;
 }
