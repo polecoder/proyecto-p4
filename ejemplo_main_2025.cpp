@@ -51,10 +51,8 @@ void parte_f(){
 }
 
 void parte_g() {
-
-	
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
-    Investigador* alberto = coleccion_getInvestigador("0000-0001-8765-4321");
+	Investigador* alberto = coleccion_getInvestigador("0000-0001-8765-4321");
     Publicacion* pub1 = coleccion_getPublicacion("10.1234/abc123");
     Publicacion* pub2 = coleccion_getPublicacion("10.4567/jkl012");
     Publicacion* pub3 = coleccion_getPublicacion("10.5678/mno345");
