@@ -25,16 +25,15 @@ void Publicacion::setFecha(DTFecha fecha){
     this->fecha=fecha;
 }
 
-void Publicacion::agregarAutor(Investigador& investigador) {
-    Investigador* inv = &investigador;  
-    this->autores.insert(inv);         
+void Publicacion::agregarAutor(Investigador* investigador) {
+    this->autores.insert(investigador);         
 }
 
-void Publicacion::eliminarAutor(Investigador& investigador) {
-    Investigador* inv = &investigador;  
-    this->autores.erase(inv);           
+void Publicacion::eliminarAutor(Investigador* investigador) {
+    if (this->autores.find(investigador) != autores.end()) {
+        this->autores.erase(investigador);    
+    }       
 }
-
 
 set<Investigador*> Publicacion::getAutores(){
     return this->autores;
