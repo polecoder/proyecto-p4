@@ -1,3 +1,5 @@
+#ifndef ARTICULOREVISTA
+#define ARTICULOREVISTA
 #include "../include/DTFecha.h"
 #include "../include/Publicacion.h"
 #include "../include/Investigador.h"
@@ -10,7 +12,7 @@ class ArticuloRevista: public Publicacion {
         string revista;
         string extracto;
     public:
-        articuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto);
+        ArticuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto);
 
         void setRevista(string revista);
         void setExtracto(string extracto);
