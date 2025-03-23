@@ -50,7 +50,7 @@ void parte_e(){
 void parte_f(){
 }
 
-oid parte_g() {
+void parte_g() {
 
 	
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
