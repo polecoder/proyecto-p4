@@ -117,6 +117,7 @@ void parte_g() {
 }
 
 void parte_h(){
+	lis
 }
 
 void parte_i(){

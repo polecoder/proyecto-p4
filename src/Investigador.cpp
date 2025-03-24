@@ -56,12 +56,12 @@ string Investigador::getInstitucion(){
 }
 
 // Falta una funcion para saber si una fecha es mayor que otra, no se si me corresponde a mi o a publicacion
-set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
-    set<string> DOI;
-    for (Publicacion* publicacion : publicaciones) {
-        if (publicacion->getFecha() > desde && publicacion->contienePalabra(palabra)) {
-            DOI.insert(publicacion->getDOI());
+set<string> conjuntoDOI;
+    for (set<Publicacion>::iterator iteradorPub = this->publicaciones.begin(); iteradorPub != this->publicaciones.end(); ++iteradorPub) {
+        Publicacion publicacion = *iteradorPub; 
+        DTFecha fechaPublicacion = publicacion->getFecha();
+        if (fechaPublicacion.mayorQue(desde) && publicacion->contienePalabra(palabra)) {
+            conjuntoDOI.insert(publicacion->getDOI());
         }
     }
-    return DOI;
-}
+    return conjuntoDOI
