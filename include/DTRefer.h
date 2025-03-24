@@ -16,6 +16,13 @@ class DTRefer{
         string getDOI();
         string getTitulo();
         DTFecha getFecha();
-        set<string>  getAutores();   
+        set<string>  getAutores();
+
+        // sobrecarga para imprimir
+        ostream& operator<<(ostream& os) {
+            DTFecha fecha = this->fecha;
+            os << this->DOI << "->" << this->titulo << "(" << fecha.getDia() << fecha.getMes() << fecha.getAnio() << ")/";
+            return os;
+        }
 };
 #endif
