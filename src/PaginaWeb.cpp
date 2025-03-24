@@ -13,7 +13,7 @@ PaginaWeb:: PaginaWeb(string DOI, string titulo, DTFecha fecha, set<Investigador
     this->contenidoExtraido = contenidoExtraido;
 }
 
-void Paginaweb:: setUrl(string url){
+void PaginaWeb:: setUrl(string url){
     this->url = url;
 }
 
@@ -25,10 +25,10 @@ string PaginaWeb:: getUrl(){
     return this->url;
 }
 
-string PaginaWeb:: getContenidoExtraido(){
+string PaginaWeb::getContenidoExtraido(){
     return this->contenidoExtraido;
 }
 
-bool contienePalabra(string palabra){
+bool PaginaWeb::contienePalabra(string palabra){
     return (this->contenidoExtraido.find(palabra) != string::npos);
 }
