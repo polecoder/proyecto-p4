@@ -6,7 +6,6 @@
 #include "include/ArticuloRevista.h"
 #include "include/Libro.h"
 
-
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
 
@@ -78,7 +77,6 @@ void parte_c(){
 
 	PaginaWeb* inv = &pag;
 	coleccion_guardarPublicacion(inv);
-
 }
 
 void parte_d(){
@@ -94,52 +92,71 @@ void parte_e(){
 	Investigador inv2 = Investigador("0000-0001-8765-4321", "Alberto Santos", "Instituto Tecnico", publicaciones2);
 	Investigador* Alberto = &inv2;
 	coleccion_guardarInvestigador(Alberto);
-
 }
 
 void parte_f(){
 }
 
 void parte_g() {
+  Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
+  Investigador* alberto = coleccion_getInvestigador("0000-0001-8765-4321");
+  Publicacion* pub1 = coleccion_getPublicacion("10.1234/abc123");
+  Publicacion* pub2 = coleccion_getPublicacion("10.4567/jkl012");
+  Publicacion* pub3 = coleccion_getPublicacion("10.5678/mno345");
+  Publicacion* pub4 = coleccion_getPublicacion("10.3456/ghi789");
+  Publicacion* pub5 = coleccion_getPublicacion("10.2345/def456");
+
+  // Relaciones de Carla Oliveri, 
+  carla->agregarPublicacion(pub1); // seteandole a los investigadores las publicaciones
+  pub1->agregarAutor(carla); // seteandole la publicacion a carla
+
+  carla->agregarPublicacion(pub2);
+  pub2->agregarAutor(carla);
+
+  carla->agregarPublicacion(pub3);
+  pub3->agregarAutor(carla);
+
+  carla->agregarPublicacion(pub4);
+  pub4->agregarAutor(carla);
+
+  // Relaciones de Alberto Santos
+  alberto->agregarPublicacion(pub1);
+  pub1->agregarAutor(alberto);
+
+  alberto->agregarPublicacion(pub5);
+  pub5->agregarAutor(alberto);
+
+  alberto->agregarPublicacion(pub2);
+  pub2->agregarAutor(alberto);
+}
+
+void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
-	Investigador* alberto = coleccion_getInvestigador("0000-0001-8765-4321");
-    Publicacion* pub1 = coleccion_getPublicacion("10.1234/abc123");
-    Publicacion* pub2 = coleccion_getPublicacion("10.4567/jkl012");
-    Publicacion* pub3 = coleccion_getPublicacion("10.5678/mno345");
-    Publicacion* pub4 = coleccion_getPublicacion("10.3456/ghi789");
-    Publicacion* pub5 = coleccion_getPublicacion("10.2345/def456");
-
-    // Relaciones de Carla Oliveri, 
-    carla->agregarPublicacion(pub1); //seteandole a los investigadores las publicaciones
-    pub1->agregarInvestigador(carla); // seteandole la publicacion a carla
-    
-	carla->agregarPublicacion(pub2);
-    pub2->agregarAutor(carla);
-
-    carla->agregarPublicacion(pub3);
-    pub3->agregarAutor(carla);
-
-    carla->agregarPublicacion(pub4);
-    pub4->agregarAutor(carla);
-
-    // Relaciones de Alberto Santos
-    alberto->agregarPublicacion(pub1);
-    pub1->agregarAutor(alberto);
-
-    alberto->agregarPublicacion(pub5);
-    pub5->agregarAutor(alberto);
-
-    alberto->agregarPublicacion(pub2);
-    pub2->agregarAutor(alberto);
+	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
+	// Imprimir cada DOI en una línea
+	for (const std::string& doi : publicaciones) {
+		std::cout << doi << std::endl;
+	}
 }
 
-void parte_h(){
-}
-
-void parte_i(){
+void parte_i() { // Eliminar publicacion
+  std::string doi = "10.1234/abc123";
+  for (auto it = publicaciones.begin(); it != publicaciones.end(); ++it) {
+      if ((*it)->getDOI() == doi) { // Desreferenciar el puntero para acceder a getDOI()
+          publicaciones.erase(it);  // Se elimina del list
+          return;
+      }
+  }
 }
 
 void parte_j(){
+	
+	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
+	// Imprimir cada DOI en una línea
+	for (const std::string& doi : publicaciones) {
+		std::cout << doi << std::endl;
+	}
 }
 
 void parte_k(){
@@ -171,6 +188,5 @@ int main() {
 	std::cout << "cleanUp" <<  std::endl;
 	cleanUp();
 	std::cout << "fin" <<  std::endl;
-
 	return 0;
 }

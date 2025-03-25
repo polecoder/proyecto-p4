@@ -7,7 +7,10 @@
 #include "../include/Publicacion.h"
 
 // con lista de inicializacion
-Libro::Libro(string DOI, string titulo, DTFecha fecha, set<Investigador*> autores, string editorial, set<string> palabrasDestacadas) : Publicacion(DOI, titulo, fecha, autores), editorial(editorial), palabrasDestacadas(palabrasDestacadas) {}
+Libro::Libro(string DOI, string titulo, DTFecha fecha, string editorial, set<Investigador*> autores, set<string> palabrasDestacadas) : Publicacion(DOI, titulo, fecha, autores) {
+  this->editorial = editorial;
+  this->palabrasDestacadas = palabrasDestacadas;
+}
 
 void Libro::setEditorial(string editorial) {
   this->editorial = editorial;
