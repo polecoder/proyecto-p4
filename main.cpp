@@ -137,15 +137,15 @@ void parte_i() { // Eliminar publicacion
 }
 
 void parte_j(){
-	void parte_h() {
-		Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
-		std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
-		// Imprimir cada DOI en una línea
-		for (const std::string& doi : publicaciones) {
-			std::cout << doi << std::endl;
-		}
+	
+	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
+	// Imprimir cada DOI en una línea
+	for (const std::string& doi : publicaciones) {
+		std::cout << doi << std::endl;
 	}
 }
+
 
 void parte_k(){
 }
