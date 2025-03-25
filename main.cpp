@@ -94,7 +94,7 @@ void parte_g() {
 
     // Relaciones de Carla Oliveri, 
     carla->agregarPublicacion(pub1); //seteandole a los investigadores las publicaciones
-    pub1->agregarInvestigador(carla); // seteandole la publicacion a carla
+    pub1->agregarAutor(carla); // seteandole la publicacion a carla
     
 	carla->agregarPublicacion(pub2);
     pub2->agregarAutor(carla);
@@ -117,14 +117,14 @@ void parte_g() {
 }
 
 
-	void parte_h() {
-		Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
-		std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
-		// Imprimir cada DOI en una línea
-		for (const std::string& doi : publicaciones) {
-			std::cout << doi << std::endl;
-		}
+void parte_h() {
+	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
+	// Imprimir cada DOI en una línea
+	for (const std::string& doi : publicaciones) {
+		std::cout << doi << std::endl;
 	}
+}
 
 void parte_i() { // Eliminar publicacion
     std::string doi = "10.1234/abc123";
