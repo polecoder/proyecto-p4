@@ -6,6 +6,7 @@
 #include "include/ArticuloRevista.h"
 #include "include/Libro.h"
 
+
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
 
