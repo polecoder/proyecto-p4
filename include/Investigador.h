@@ -29,6 +29,7 @@ class Investigador{
         string getORCID();
         string getNombre();
         string getInstitucion();
+        string toString();
         set<Publicacion> getPublicaciones();
 
         string toString(); 

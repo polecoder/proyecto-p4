@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include <ostream>
 #include "include/Investigador.h"
 #include "include/Publicacion.h"
 #include "include/ArticuloRevista.h"
@@ -80,6 +81,11 @@ void parte_c(){
 }
 
 void parte_d(){
+	list<Publicacion*>::const_iterator iteradorPub;
+	for (iteradorPub = publicaciones.begin(); iteradorPub != publicaciones.end(); ++iteradorPub) {
+		Publicacion* publicacion = *iteradorPub;
+		cout << publicacion->getDT() << endl;
+	}
 }
 
 void parte_e(){
@@ -95,6 +101,11 @@ void parte_e(){
 }
 
 void parte_f(){
+		list<Investigador*>::const_iterator iteradorInv;
+		for (iteradorInv = investigadores.begin(); iteradorInv != investigadores.end(); ++it) {
+			Investigador* investigador = *iteradorInv;
+			cout << investigador->toString() << endl;
+		}
 }
 
 void parte_g() {
