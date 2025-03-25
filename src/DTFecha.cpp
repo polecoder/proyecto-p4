@@ -1,14 +1,15 @@
 #include "../include/DTFecha.h"
 
+DTFecha::DTFecha() {
+  this->dia = 0;
+  this->mes = 0;
+  this->anio = 0;
+}
+
 DTFecha::DTFecha(int dia, int mes, int anio) {
   this->dia = dia;
   this->mes = mes;
   this->anio = anio;
-}
-
-// duda
-DTFecha::~DTFecha() {
-  delete this;
 }
 
 int DTFecha::getDia() {

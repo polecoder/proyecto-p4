@@ -34,4 +34,5 @@ class Investigador{
 
         set<string> listarPublicaciones(DTFecha desde, string palabra);
 };
+
 #endif
