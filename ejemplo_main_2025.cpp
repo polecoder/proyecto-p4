@@ -5,7 +5,7 @@
 #include "include/Publicacion.h"
 #include "include/ArticuloRevista.h"
 #include "include/Libro.h"
-#include "include/PaginaWeb.h"
+
 
 
 std::list<Publicacion*> publicaciones;
