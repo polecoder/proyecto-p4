@@ -49,6 +49,10 @@ string Investigador::getInstitucion(){
     return this->institucion;
 }
 
+string Investigador::toString(){
+    return ORCID + "->" + nombre + "/" + institucion;
+}
+
 set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     set<string> conjuntoDOI;
     set<Publicacion*>::const_iterator iteradorPub;

@@ -73,7 +73,10 @@ void parte_b(){
 void parte_c(){
 }
 
+//Imprimir en consola utilizando la inserción de flujo el resultado de ejecutar la operación
+//getDT() para cada uno de los objetos Publicacion creados.
 void parte_d(){
+
 }
 
 void parte_e(){
