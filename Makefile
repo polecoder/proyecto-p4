@@ -10,7 +10,7 @@ ArticuloRevista.o: src/ArticuloRevista.cpp include/ArticuloRevista.h DTFecha.o P
 	g++ $(GXXFLAGS) -c -o ArticuloRevista.o src/ArticuloRevista.cpp DTFecha.o Publicacion.o Investigador.o
 
 DTFecha.o: src/DTFecha.cpp include/DTFecha.h
-	g++ $(GXXFLAGS) -c -o DTFecha.o src/DTFecha.cpp
+	g++ $(GXXFLAGS) -c DTFecha.o src/DTFecha.cpp
 
 DTRefer.o: src/DTRefer.cpp include/DTRefer.h DTFecha.o
 	g++ $(GXXFLAGS) -c -o DTRefer.o src/DTRefer.cpp DTFecha.o

@@ -32,7 +32,6 @@ class Investigador{
         string toString();
         set<Publicacion> getPublicaciones();
 
-        string toString(); 
         set<string> listarPublicaciones(DTFecha desde, string palabra);
 };
 #endif
