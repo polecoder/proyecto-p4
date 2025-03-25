@@ -72,12 +72,29 @@ void parte_b(){
 
 
 void parte_c(){
+	DTFecha fecha = DTFecha(20,12,2024);
+	std::set<Investigador*> autores;
+	PaginaWeb pag = PaginaWeb("10.3456/ghi789", "Diagramas Para Principiantes", fecha, autores, "www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades");
+
+	PaginaWeb* inv = &pag;
+	coleccion_guardarPublicacion(inv);
+
 }
 
 void parte_d(){
 }
 
 void parte_e(){
+	std::set<Publicacion*> publicaciones;
+	Investigador inv = Investigador("0000-0003-1234-5678", "Carla Oliveri", "Universidad de la Republica", publicaciones);
+	Investigador* Carla = &inv;
+	coleccion_guardarInvestigador(Carla);
+
+	std::set<Publicacion*> publicaciones2;
+	Investigador inv2 = Investigador("0000-0001-8765-4321", "Alberto Santos", "Instituto Tecnico", publicaciones2);
+	Investigador* Alberto = &inv2;
+	coleccion_guardarInvestigador(Alberto);
+
 }
 
 void parte_f(){
