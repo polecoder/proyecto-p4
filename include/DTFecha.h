@@ -1,5 +1,5 @@
-#ifndef FECHA
-#define FECHA
+#ifndef DTFECHA
+#define DTFECHA
 
 #include <ostream>
 
