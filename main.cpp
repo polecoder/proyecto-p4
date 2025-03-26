@@ -58,18 +58,23 @@ void parte_a(){
 void parte_b(){
 	DTFecha fecha = DTFecha(20,8,2022);
 	std::set<Investigador*> autores;
-  /* 2 OPCIONES: Crear un set<string> y usar .insert para poner las palabras destacadas
-     Lo mismo pero usando agregarPalabrasDestacadas() */ 
-	Libro libro=Libro("10.2345/def456","Patrones de Diseno en c++",fecha,"Software Design",autores,{"Diseno","OOP","Class"});
+  	std::set<string> palabrasImp;
+	palabrasImp.insert("Diseno");
+	palabrasImp.insert("OOP");
+	palabrasImp.insert("Class");
+	Libro libro=Libro("10.2345/def456","Patrones de Diseno en c++",fecha,"Software Design",autores,palabrasImp);
 
 	Publicacion* publi = &libro;
 	coleccion_guardarPublicacion(publi);
 	
 	DTFecha fecha2 = DTFecha(20,8,2022);
 	std::set<Investigador*> autores2;
-  /* 2 OPCIONES: Crear un set<string> y usar .insert para poner las palabras destacadas
-     Lo mismo pero usando agregarPalabrasDestacadas() */ 
-	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,{"Diagramas","UML","Software","Modelado"});
+	std::set<string> palabras;
+	palabras.insert("Diagramas");
+	palabras.insert("UML");
+	palabras.insert("Software");
+	palabras.insert("Modelado");
+	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,palabras);
 
 	Publicacion* publi2 = &libro2;
 	coleccion_guardarPublicacion(publi2);
