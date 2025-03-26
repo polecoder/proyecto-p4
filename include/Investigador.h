@@ -2,6 +2,9 @@
 #define INVESTIGADOR
 #include <set>
 #include <string> 
+
+#include "DTFecha.h"
+
 using namespace std;
 
 // Forward declaration
