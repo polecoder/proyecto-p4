@@ -17,7 +17,6 @@ class DTRefer{
         string getTitulo();
         DTFecha getFecha();
         set<string>  getAutores();
-
         // sobrecarga para imprimir
         ostream& operator<<(ostream& os) {
             DTFecha fecha = this->fecha;
