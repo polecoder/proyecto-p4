@@ -1,5 +1,5 @@
-#ifndef FECHA
-#define FECHA
+#ifndef DTFECHA
+#define DTFECHA
 
 #include <ostream>
 
@@ -13,7 +13,6 @@ class DTFecha {
   public:
     DTFecha();
     DTFecha(int dia, int mes, int anio);
-    ~DTFecha(); // duda
     int getDia();
     int getMes();
     int getAnio();

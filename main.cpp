@@ -6,6 +6,8 @@
 #include "include/Publicacion.h"
 #include "include/ArticuloRevista.h"
 #include "include/Libro.h"
+#include "include/PaginaWeb.h"
+#include "include/DTRefer.h"
 
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
@@ -56,6 +58,8 @@ void parte_a(){
 void parte_b(){
 	DTFecha fecha = DTFecha(20,8,2022);
 	std::set<Investigador*> autores;
+  /* 2 OPCIONES: Crear un set<string> y usar .insert para poner las palabras destacadas
+     Lo mismo pero usando agregarPalabrasDestacadas() */ 
 	Libro libro=Libro("10.2345/def456","Patrones de Diseno en c++",fecha,"Software Design",autores,{"Diseno","OOP","Class"});
 
 	Publicacion* publi = &libro;
@@ -63,13 +67,14 @@ void parte_b(){
 	
 	DTFecha fecha2 = DTFecha(20,8,2022);
 	std::set<Investigador*> autores2;
+  /* 2 OPCIONES: Crear un set<string> y usar .insert para poner las palabras destacadas
+     Lo mismo pero usando agregarPalabrasDestacadas() */ 
 	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,{"Diagramas","UML","Software","Modelado"});
 
 	Publicacion* publi2 = &libro2;
 	coleccion_guardarPublicacion(publi2);
 
 }
-
 
 void parte_c(){
 	DTFecha fecha = DTFecha(20,12,2024);
@@ -102,7 +107,7 @@ void parte_e(){
 
 void parte_f(){
 		list<Investigador*>::const_iterator iteradorInv;
-		for (iteradorInv = investigadores.begin(); iteradorInv != investigadores.end(); ++it) {
+		for (iteradorInv = investigadores.begin(); iteradorInv != investigadores.end(); ++iteradorInv) {
 			Investigador* investigador = *iteradorInv;
 			cout << investigador->toString() << endl;
 		}
@@ -144,7 +149,7 @@ void parte_g() {
 void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
-	// Imprimir cada DOI en una línea
+	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
 	for (const std::string& doi : publicaciones) {
 		std::cout << doi << std::endl;
 	}
@@ -161,10 +166,9 @@ void parte_i() { // Eliminar publicacion
 }
 
 void parte_j(){
-	
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
-	// Imprimir cada DOI en una línea
+	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
 	for (const std::string& doi : publicaciones) {
 		std::cout << doi << std::endl;
 	}

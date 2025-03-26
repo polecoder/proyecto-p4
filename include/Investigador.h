@@ -2,6 +2,9 @@
 #define INVESTIGADOR
 #include <set>
 #include <string> 
+
+#include "DTFecha.h"
+
 using namespace std;
 
 // Forward declaration
@@ -32,7 +35,7 @@ class Investigador{
         string toString();
         set<Publicacion> getPublicaciones();
 
-        string toString(); 
         set<string> listarPublicaciones(DTFecha desde, string palabra);
 };
+
 #endif

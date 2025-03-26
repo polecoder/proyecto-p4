@@ -1,5 +1,5 @@
-#ifndef REFER
-#define REFER
+#ifndef DTREFER
+#define DTREFER
 #include "DTFecha.h"
 #include <set>
 #include <string> 
@@ -12,12 +12,11 @@ class DTRefer{
         DTFecha fecha;
         set<string> autores;
     public:
-        DTRefer (string DOI, string titulo, DTFecha fecha, set<string> autores);
+        DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores);
         string getDOI();
         string getTitulo();
         DTFecha getFecha();
         set<string>  getAutores();
-
         // sobrecarga para imprimir
         ostream& operator<<(ostream& os) {
             DTFecha fecha = this->fecha;

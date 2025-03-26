@@ -9,6 +9,9 @@
 #include <string> 
 using namespace std;
 
+// Forward declaration
+class Investigador;
+
 class Publicacion{
     private:
         string DOI;
