@@ -150,17 +150,21 @@ void parte_h() {
 	}
 }
 
-void parte_i() { // Eliminar publicacion
-  std::string doi = "10.1234/abc123";
-  set<Publicacion*>::const_iterator it;
-  for (it = this->publicaciones.begin(); it != this->publicaciones.end(); ++it) {
-	  Publicacion* publicacion = *it;
-	  if (publicacion->getDOI() == doi) {
-		  publicaciones.erase(it);  // Se elimina del list
-		  return;
-	  }
-  }
+void parte_i() { // Eliminar publicación
+    std::string doi = "10.1234/abc123";
+    std::set<Publicacion*>::iterator it = publicaciones.begin();
+    
+    while (it != publicaciones.end()) {
+        Publicacion* publicacion = *it;
+        if (publicacion->getDOI() == doi) {
+            it = publicaciones.erase(it); // erase devuelve el siguiente iterador válido
+            coleccion_eliminarPublicacion(publicacion);
+        } else {
+            ++it;
+        }
+    }
 }
+
 
 void parte_j(){
 	
