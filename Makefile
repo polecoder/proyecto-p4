@@ -2,8 +2,8 @@
 GXXFLAGS = -std=c++98
 
 # Principal
-build: main.cpp ArticuloRevista.o DTFecha.o DTRefer.o Investigador.o Libro.o PaginaWeb.o Publicacion.o
-	g++ $(GXXFLAGS) -o main main.cpp ArticuloRevista.o DTFecha.o DTRefer.o Investigador.o Libro.o PaginaWeb.o Publicacion.o
+build: main.cpp ArticuloRevista.o DTFecha.o DTRefer.o Investigador.o Libro.o PaginaWeb.o Publicacion.o utils.o
+	g++ $(GXXFLAGS) -o main main.cpp ArticuloRevista.o DTFecha.o DTRefer.o Investigador.o Libro.o PaginaWeb.o Publicacion.o utils.o
 
 # Objetos
 ArticuloRevista.o: src/ArticuloRevista.cpp include/ArticuloRevista.h DTFecha.o Publicacion.o Investigador.o
@@ -26,3 +26,6 @@ PaginaWeb.o: src/PaginaWeb.cpp include/PaginaWeb.h Publicacion.o DTFecha.o Inves
 
 Publicacion.o: src/Publicacion.cpp include/Publicacion.h DTRefer.o DTFecha.o Investigador.o
 	g++ $(GXXFLAGS) -c -o Publicacion.o src/Publicacion.cpp
+
+utils.o: src/utils.cpp include/utils.h Publicacion.o
+	g++ $(GXXFLAGS) -c -o utils.o src/utils.cpp
