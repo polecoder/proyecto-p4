@@ -1,5 +1,6 @@
 #include "../include/utils.h"
 #include "../include/Publicacion.h"
+#include "../include/DTRefer.h"
 
 #include <list>
 #include <iostream>
@@ -11,7 +12,8 @@ void imprimirPublicaciones(list<Publicacion*> publicaciones) {
   list<Publicacion*>::const_iterator iteradorPub;
 	for (iteradorPub = publicaciones.begin(); iteradorPub != publicaciones.end(); ++iteradorPub) {
 		Publicacion* publicacion = *iteradorPub;
-		cout << publicacion->getDT() << endl;
+		cout << publicacion->getDT();
+    cout << endl;
 	}
 }
 
