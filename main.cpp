@@ -152,7 +152,6 @@ void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
 	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
-
 	for (const std::string& doi : publicaciones) {
 		std::cout << doi << std::endl;
 	}
@@ -160,12 +159,15 @@ void parte_h() {
 
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
-  for (auto it = publicaciones.begin(); it != publicaciones.end(); ++it) {
-      if ((*it)->getDOI() == doi) { // Desreferenciar el puntero para acceder a getDOI()
-          publicaciones.erase(it);  // Se elimina del list
-          return;
-      }
-  }
+  std::list<Publicacion*>::iterator it = publicaciones.begin();
+
+  for (it = publicaciones.begin(); it != publicaciones.end(); ++it) {
+    Publicacion* publicacion = *it;
+    if (publicacion->getDOI() == doi) {
+      coleccion_eliminarPublicacion(publicacion); // Primero eliminar de otros contenedores
+      publicaciones.erase(it); // Luego eliminar de la lista
+    }
+  }    
 }
 
 void parte_j(){
