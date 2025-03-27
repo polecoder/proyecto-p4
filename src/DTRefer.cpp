@@ -27,3 +27,17 @@ DTFecha DTRefer::getFecha(){
 set<string> DTRefer::getAutores() {
     return this->autores;
 }
+
+ostream& operator<<(ostream& os, DTRefer ref) {
+    DTFecha fecha = ref.getFecha();
+    os << ref.getDOI() << "->" << ref.getTitulo() << "(" << fecha.getDia() << "/" << fecha.getMes() << "/" << fecha.getAnio() << ")/";
+    set<string>::iterator it = ref.getAutores().begin();
+    while (it != ref.getAutores().end()) {
+        os << *it;  // Imprime el autor
+        ++it;       // Avanza al siguiente iterador
+        if (it != ref.getAutores().end()) { 
+            os << ","; // Solo agrega la coma si hay más elementos
+        }
+    }
+    return os;
+}
