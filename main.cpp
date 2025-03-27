@@ -69,11 +69,11 @@ void parte_b(){
 	
 	DTFecha fecha2 = DTFecha(20,8,2022);
 	std::set<Investigador*> autores2;
-	std::set<string> palabras;
-	palabras.insert("Diagramas");
-	palabras.insert("UML");
-	palabras.insert("Software");
-	palabras.insert("Modelado");
+	std::set<string> palabrasImp2;
+	palabrasImp2.insert("Diagramas");
+	palabrasImp2.insert("UML");
+	palabrasImp2.insert("Software");
+	palabrasImp2.insert("Modelado");
 	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,palabras);
 
 	Publicacion* publi2 = &libro2;
