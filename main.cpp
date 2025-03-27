@@ -152,11 +152,13 @@ void parte_h() {
 
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
-  for (auto it = publicaciones.begin(); it != publicaciones.end(); ++it) {
-      if ((*it)->getDOI() == doi) { // Desreferenciar el puntero para acceder a getDOI()
-          publicaciones.erase(it);  // Se elimina del list
-          return;
-      }
+  set<Publicacion*>::const_iterator it;
+  for (it = this->publicaciones.begin(); it != this->publicaciones.end(); ++it) {
+	  Publicacion* publicacion = *it;
+	  if (publicacion->getDOI() == doi) {
+		  publicaciones.erase(it);  // Se elimina del list
+		  return;
+	  }
   }
 }
 
