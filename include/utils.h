@@ -5,7 +5,14 @@
 
 #include "Publicacion.h"
 
+#include <map>
+
 #include <list>
+
+extern std::list<Publicacion*> publicaciones;
+extern std::map<std::string, Publicacion*> map_publicaciones;
+extern std::list<Investigador*> investigadores;
+extern std::map<std::string, Investigador*> map_investigadores;
 
 using namespace std;
 
