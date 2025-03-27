@@ -152,8 +152,10 @@ void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
 	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
-	for (const std::string& doi : publicaciones) {
-		std::cout << doi << std::endl;
+  std::set<std::string>::const_iterator iterador;
+	for (iterador = publicaciones.begin(); iterador != publicaciones.end(); ++iterador) {
+		std::string publicacion = *iterador;
+		cout << publicacion << endl;
 	}
 }
 
