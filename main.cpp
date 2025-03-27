@@ -150,6 +150,7 @@ void parte_h() {
 	}
 }
 
+
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
   std::list<Publicacion*>::iterator it = publicaciones.begin();
@@ -163,6 +164,7 @@ void parte_i() { // Eliminar publicacion
     coleccion_eliminarPublicacion(publicacion);
   }   
 }
+
 
 void parte_j(){
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
