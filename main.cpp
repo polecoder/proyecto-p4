@@ -8,6 +8,7 @@
 #include "include/Libro.h"
 #include "include/PaginaWeb.h"
 #include "include/DTRefer.h"
+#include "include/utils.h"
 
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
@@ -86,11 +87,7 @@ void parte_c(){
 }
 
 void parte_d(){
-	list<Publicacion*>::const_iterator iteradorPub;
-	for (iteradorPub = publicaciones.begin(); iteradorPub != publicaciones.end(); ++iteradorPub) {
-		Publicacion* publicacion = *iteradorPub;
-		cout << publicacion->getDT() << endl;
-	}
+	imprimirPublicaciones(publicaciones);
 }
 
 void parte_e(){
@@ -175,6 +172,7 @@ void parte_j(){
 }
 
 void parte_k(){
+  imprimirPublicaciones(publicaciones);
 }
 
 int main() {
