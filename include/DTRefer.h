@@ -13,13 +13,12 @@ class DTRefer{
         set<string> autores;
     public:
         DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores);
-        string getDOI();
-        string getTitulo();
-        DTFecha getFecha();
-        set<string>  getAutores();
-        
+        string getDOI() const;
+        string getTitulo() const;
+        DTFecha getFecha() const;
+        set<string> getAutores() const;
 };
 
-ostream& operator <<(ostream&os, const DTRefer& ref);
+ostream& operator<<(ostream&os, const DTRefer& ref);
 
 #endif
