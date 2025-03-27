@@ -59,7 +59,7 @@ void parte_a(){
 void parte_b(){
 	DTFecha fecha = DTFecha(20,8,2022);
 	std::set<Investigador*> autores;
-  	std::set<string> palabrasImp;
+  std::set<string> palabrasImp;
 	palabrasImp.insert("Diseno");
 	palabrasImp.insert("OOP");
 	palabrasImp.insert("Class");
@@ -75,7 +75,7 @@ void parte_b(){
 	palabrasImp2.insert("UML");
 	palabrasImp2.insert("Software");
 	palabrasImp2.insert("Modelado");
-	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,palabras);
+	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,palabrasImp2);
 
 	Publicacion* publi2 = &libro2;
 	coleccion_guardarPublicacion(publi2);
@@ -152,6 +152,7 @@ void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
 	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
+
 	for (const std::string& doi : publicaciones) {
 		std::cout << doi << std::endl;
 	}
@@ -170,9 +171,10 @@ void parte_i() { // Eliminar publicacion
 void parte_j(){
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
-	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
-	for (const std::string& doi : publicaciones) {
-		std::cout << doi << std::endl;
+  std::set<std::string>::const_iterator iterador;
+	for (iterador = publicaciones.begin(); iterador != publicaciones.end(); ++iterador) {
+		std::string publicacion = *iterador;
+		cout << publicacion << endl;
 	}
 }
 
