@@ -3,7 +3,6 @@
 
 #include "DTFecha.h"
 #include "DTRefer.h"
-#include "Investigador.h"
 
 #include <set>
 #include <string> 
