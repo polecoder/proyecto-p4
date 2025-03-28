@@ -153,13 +153,15 @@ void parte_h() {
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
   std::list<Publicacion*>::iterator it = publicaciones.begin();
-  for (it = publicaciones.begin(); it != publicaciones.end(); ++it) {
+  // Buscar la publicación con un while
+  while ((it != publicaciones.end()) && ((*it)->getDOI() != doi)) {
+    ++it;
+  }
+  // si esta la eliminamos
+  if (it != publicaciones.end()) {
     Publicacion* publicacion = *it;
-    if (publicacion->getDOI() == doi) {
-      coleccion_eliminarPublicacion(publicacion); // Primero eliminar de otros contenedores
-      it = publicaciones.erase(it);
-    }
-  }    
+    coleccion_eliminarPublicacion(publicacion);
+  }   
 }
 
 void parte_j(){
