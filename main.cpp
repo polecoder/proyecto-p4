@@ -150,6 +150,7 @@ void parte_h() {
 	}
 }
 
+<<<<<<< HEAD
 
 void parte_i() { // Eliminar publicación
 
@@ -167,7 +168,6 @@ void parte_i() { // Eliminar publicación
     }
 
 }
-
 
 
 void parte_j(){
