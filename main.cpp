@@ -40,55 +40,49 @@ Publicacion* coleccion_getPublicacion(std::string DOI){
 	return map_publicaciones[DOI];
 }
 
-void parte_a(){
-	DTFecha fecha = DTFecha(15,5,2023);
-	std::set<Investigador*> autores;
-	ArticuloRevista artRev=ArticuloRevista("10.1234/abc123", "Fundamentos de POO", fecha, autores,"Programación Avanzada","Introduccion a los principios fundamentales de la programación orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.");
+void parte_a() {
+    DTFecha fecha = DTFecha(15,5,2023);
+    std::set<Investigador*> autores;
+    Publicacion* publi = new ArticuloRevista("10.1234/abc123", "Fundamentos de POO", fecha, autores,"Programación Avanzada","Introduccion a los principios fundamentales de la programación orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.");
+    coleccion_guardarPublicacion(publi);
 
-	Publicacion* publi = &artRev;
-	coleccion_guardarPublicacion(publi);
-
-	DTFecha fecha2 = DTFecha(10,2,2024);
-	std::set<Investigador*> autores2;
-	ArticuloRevista artRev2=ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, autores2,"Modelado de Software","Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
-
-	Publicacion* publi2 = &artRev;
-	coleccion_guardarPublicacion(publi2);
+    DTFecha fecha2 = DTFecha(10,2,2024);
+    std::set<Investigador*> autores2;
+    Publicacion* publi2 = new ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, autores2,"Modelado de Software","Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
+    coleccion_guardarPublicacion(publi2);
 }
 
 void parte_b(){
-	DTFecha fecha = DTFecha(20,8,2022);
-	std::set<Investigador*> autores;
-  	std::set<string> palabrasImp;
-	palabrasImp.insert("Diseno");
-	palabrasImp.insert("OOP");
-	palabrasImp.insert("Class");
-	Libro libro=Libro("10.2345/def456","Patrones de Diseno en c++",fecha,"Software Design",autores,palabrasImp);
+    DTFecha fecha = DTFecha(20,8,2022);
+    std::set<Investigador*> autores;
+    std::set<string> palabrasImp;
+    palabrasImp.insert("Diseno");
+    palabrasImp.insert("OOP");
+    palabrasImp.insert("Class");
 
-	Publicacion* publi = &libro;
-	coleccion_guardarPublicacion(publi);
-	
-	DTFecha fecha2 = DTFecha(20,8,2022);
-	std::set<Investigador*> autores2;
-	std::set<string> palabrasImp2;
-	palabrasImp2.insert("Diagramas");
-	palabrasImp2.insert("UML");
-	palabrasImp2.insert("Software");
-	palabrasImp2.insert("Modelado");
-	Libro libro2 =Libro("10.5678/mno345","Guia de UML",fecha2,"IEEE",autores2,palabras);
+    Libro* libro = new Libro("10.2345/def456", "Patrones de Diseno en C++", fecha, "Software Design", autores, palabrasImp);
+    Publicacion* publi = libro;
+    coleccion_guardarPublicacion(publi);
 
-	Publicacion* publi2 = &libro2;
-	coleccion_guardarPublicacion(publi2);
+    DTFecha fecha2 = DTFecha(20,8,2022);
+    std::set<Investigador*> autores2;
+    std::set<string> palabrasImp2;
+    palabrasImp2.insert("Diagramas");
+    palabrasImp2.insert("UML");
+    palabrasImp2.insert("Software");
+    palabrasImp2.insert("Modelado");
 
+
+    Libro* libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha2, "IEEE", autores2, palabrasImp2);
+    Publicacion* publi2 = libro2;
+    coleccion_guardarPublicacion(publi2);
 }
 
-void parte_c(){
-	DTFecha fecha = DTFecha(20,12,2024);
-	std::set<Investigador*> autores;
-	PaginaWeb pag = PaginaWeb("10.3456/ghi789", "Diagramas Para Principiantes", fecha, autores, "www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades");
-
-	PaginaWeb* inv = &pag;
-	coleccion_guardarPublicacion(inv);
+void parte_c() {
+    DTFecha fecha = DTFecha(20,12,2024);
+    std::set<Investigador*> autores;
+    PaginaWeb* pag = new PaginaWeb("10.3456/ghi789", "Diagramas Para Principiantes", fecha, autores, "www.umlparaprincipiantes.com", "En esta página web se presenta una guía completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades");
+    coleccion_guardarPublicacion(pag);
 }
 
 void parte_d(){
@@ -96,15 +90,13 @@ void parte_d(){
 }
 
 void parte_e(){
-	std::set<Publicacion*> publicaciones;
-	Investigador inv = Investigador("0000-0003-1234-5678", "Carla Oliveri", "Universidad de la Republica", publicaciones);
-	Investigador* Carla = &inv;
-	coleccion_guardarInvestigador(Carla);
+    std::set<Publicacion*> publicaciones;
+    Investigador* Carla = new Investigador("0000-0003-1234-5678", "Carla Oliveri", "Universidad de la Republica", publicaciones);
+    coleccion_guardarInvestigador(Carla);
 
-	std::set<Publicacion*> publicaciones2;
-	Investigador inv2 = Investigador("0000-0001-8765-4321", "Alberto Santos", "Instituto Tecnico", publicaciones2);
-	Investigador* Alberto = &inv2;
-	coleccion_guardarInvestigador(Alberto);
+    std::set<Publicacion*> publicaciones2;
+    Investigador* Alberto = new Investigador("0000-0001-8765-4321", "Alberto Santos", "Instituto Tecnico", publicaciones2);
+    coleccion_guardarInvestigador(Alberto);
 }
 
 void parte_f(){
@@ -152,27 +144,33 @@ void parte_h() {
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(10,12,2023), "UML");
 	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
-	for (const std::string& doi : publicaciones) {
-		std::cout << doi << std::endl;
+  std::set<std::string>::const_iterator iterador;
+	for (iterador = publicaciones.begin(); iterador != publicaciones.end(); ++iterador) {
+		std::string publicacion = *iterador;
+		cout << publicacion << endl;
 	}
 }
 
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
-  for (auto it = publicaciones.begin(); it != publicaciones.end(); ++it) {
-      if ((*it)->getDOI() == doi) { // Desreferenciar el puntero para acceder a getDOI()
-          publicaciones.erase(it);  // Se elimina del list
-          return;
-      }
-  }
+  std::list<Publicacion*>::iterator it = publicaciones.begin();
+
+  for (it = publicaciones.begin(); it != publicaciones.end(); ++it) {
+    Publicacion* publicacion = *it;
+    if (publicacion->getDOI() == doi) {
+      coleccion_eliminarPublicacion(publicacion); // Primero eliminar de otros contenedores
+      publicaciones.erase(it); // Luego eliminar de la lista
+    }
+  }    
 }
 
 void parte_j(){
 	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
 	std::set<std::string> publicaciones = carla->listarPublicaciones(DTFecha(1,1,2020), "UML");
-	// CAMBIAR usando iterador de std::string<Publicacion*> o std::string<Publicacion>
-	for (const std::string& doi : publicaciones) {
-		std::cout << doi << std::endl;
+  std::set<std::string>::const_iterator iterador;
+	for (iterador = publicaciones.begin(); iterador != publicaciones.end(); ++iterador) {
+		std::string publicacion = *iterador;
+		cout << publicacion << endl;
 	}
 }
 

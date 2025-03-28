@@ -1,5 +1,6 @@
 #include "../include/Publicacion.h"
 #include "../include/Investigador.h"
+#include <iostream>
 #include <set>
 #include <string> 
 using namespace std;

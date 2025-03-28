@@ -9,7 +9,8 @@ void imprimirPublicaciones(list<Publicacion*> publicaciones) {
   list<Publicacion*>::const_iterator iteradorPub;
 	for (iteradorPub = publicaciones.begin(); iteradorPub != publicaciones.end(); ++iteradorPub) {
 		Publicacion* publicacion = *iteradorPub;
-		cout << publicacion->getDT() << endl;
+		cout << publicacion->getDT();
+    cout << endl;
 	}
 }
 

@@ -12,30 +12,31 @@ DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores) 
     this->autores= autores;
 }
         
-string DTRefer::getDOI(){
+string DTRefer::getDOI() const {
     return this->DOI;
 }
         
-string DTRefer::getTitulo(){
+string DTRefer::getTitulo() const {
     return this->titulo;
 }
         
-DTFecha DTRefer::getFecha(){
+DTFecha DTRefer::getFecha() const {
     return this->fecha;
 }
         
-set<string> DTRefer::getAutores() {
+set<string> DTRefer::getAutores() const {
     return this->autores;
 }
 
-ostream& operator<<(ostream& os, DTRefer ref) {
+ostream& operator<<(ostream& os, const DTRefer& ref) {
     DTFecha fecha = ref.getFecha();
     os << ref.getDOI() << "->" << ref.getTitulo() << "(" << fecha.getDia() << "/" << fecha.getMes() << "/" << fecha.getAnio() << ")/";
-    set<string>::iterator it = ref.getAutores().begin();
-    while (it != ref.getAutores().end()) {
+    const set<string>& autores = ref.getAutores(); // Referencia constante
+    set<string>::iterator it = autores.begin();
+    while (it != autores.end()) {
         os << *it;  // Imprime el autor
         ++it;       // Avanza al siguiente iterador
-        if (it != ref.getAutores().end()) { 
+        if (it != autores.end()) { 
             os << ","; // Solo agrega la coma si hay más elementos
         }
     }
