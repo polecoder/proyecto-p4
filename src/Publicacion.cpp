@@ -4,6 +4,7 @@
 #include "../include/Investigador.h"
 #include <set>
 #include <string> 
+#include <iostream>
 using namespace std;
 
 Publicacion::Publicacion(string DOI, string titulo, DTFecha fecha, set<Investigador*> autores){
@@ -54,13 +55,13 @@ DTFecha Publicacion::getFecha(){
 DTRefer Publicacion ::getDT(){
     set<string> inv;
     set<Investigador*>::const_iterator iteradorAutores;
-
     for (iteradorAutores = this->autores.begin(); iteradorAutores != this->autores.end(); ++iteradorAutores) {
         Investigador* autor = *iteradorAutores;
-        inv.insert(autor->getNombre());
+        if (autor != NULL) {
+            cout << autor->getNombre();
+            inv.insert(autor->getNombre());
+        }
     }
-
     return DTRefer(this->DOI, this->titulo,this->fecha,inv);
 }
-
 

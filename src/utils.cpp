@@ -1,8 +1,5 @@
 #include "../include/utils.h"
 #include "../include/Publicacion.h"
-#include "../include/DTRefer.h"
-
-#include <list>
 #include <iostream>
 #include <ostream>
 
@@ -18,5 +15,17 @@ void imprimirPublicaciones(list<Publicacion*> publicaciones) {
 }
 
 void cleanUp() {
-// FALTA IMPLEMENTAR
+    list<Publicacion*>::iterator itPublicacion;
+    for (itPublicacion = publicaciones.begin(); itPublicacion != publicaciones.end(); ++itPublicacion) {
+        delete *itPublicacion;
+    }
+    publicaciones.clear();
+    map_publicaciones.clear();
+
+    list<Investigador*>::iterator itInvestigador;
+    for (itInvestigador = investigadores.begin(); itInvestigador != investigadores.end(); ++itInvestigador) {
+        delete *itInvestigador;
+    }
+    investigadores.clear();
+    map_investigadores.clear();
 }
