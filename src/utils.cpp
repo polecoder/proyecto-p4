@@ -1,5 +1,7 @@
 #include "../include/utils.h"
 #include "../include/Publicacion.h"
+#include "../include/Investigador.h"
+
 #include <iostream>
 #include <ostream>
 
