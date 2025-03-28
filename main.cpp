@@ -151,6 +151,7 @@ void parte_h() {
 }
 
 
+
 void parte_i() { // Eliminar publicacion
   std::string doi = "10.1234/abc123";
   std::list<Publicacion*>::iterator it = publicaciones.begin();
@@ -163,7 +164,9 @@ void parte_i() { // Eliminar publicacion
     Publicacion* publicacion = *it;
     coleccion_eliminarPublicacion(publicacion);
   }   
+
 }
+
 
 
 void parte_j(){
