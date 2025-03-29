@@ -19,6 +19,7 @@ class Publicacion{
         set<Investigador*> autores;
     public:
         Publicacion(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores);
+        virtual ~Publicacion() = 0;
 
         void setDOI(string DOI);
         void setTitulo(string titulo);

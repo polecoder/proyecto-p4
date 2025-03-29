@@ -12,18 +12,18 @@ DTFecha::DTFecha(int dia, int mes, int anio) {
   this->anio = anio;
 }
 
-int DTFecha::getDia() {
+int DTFecha::getDia() const {
   return this->dia;
 }
 
-int DTFecha::getMes() {
+int DTFecha::getMes() const {
   return this->mes;
 }
 
-int DTFecha::getAnio() {
+int DTFecha::getAnio() const {
   return this->anio;
 }
-bool DTFecha::mayorQue(DTFecha fecha) {
+bool DTFecha::mayorQue(DTFecha fecha) const {
     if (this->anio > fecha.getAnio()) {
         return true;
     } else if (this->anio == fecha.getAnio()) {

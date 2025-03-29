@@ -35,4 +35,7 @@ utils.o: src/utils.cpp include/utils.h
 
 # Limpieza
 clean:
-	rm -f *.o main
+	rm -f *.o main main.exe
+
+valgrind:
+	valgrind --leak-check=full ./main
