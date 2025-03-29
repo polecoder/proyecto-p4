@@ -13,10 +13,10 @@ class DTFecha {
   public:
     DTFecha();
     DTFecha(int dia, int mes, int anio);
-    int getDia();
-    int getMes();
-    int getAnio();
-    bool mayorQue(DTFecha fecha);
+    int getDia() const;
+    int getMes() const;
+    int getAnio() const;
+    bool mayorQue(DTFecha fecha) const;
 };
 
 

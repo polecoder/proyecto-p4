@@ -14,6 +14,8 @@ Publicacion::Publicacion(string DOI, string titulo, DTFecha fecha, set<Investiga
     this->autores=autores;
 }
 
+Publicacion::~Publicacion() {};
+
 void Publicacion::setDOI (string DOI){
     this->DOI=DOI;
 }

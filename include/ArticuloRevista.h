@@ -13,7 +13,6 @@ class ArticuloRevista: public Publicacion {
         string extracto;
     public:
         ArticuloRevista(string DOI, string titulo, DTFecha fecha,set<Investigador*> autores, string nombreRevista, string extracto);
-
         void setRevista(string revista);
         void setExtracto(string extracto);
 
